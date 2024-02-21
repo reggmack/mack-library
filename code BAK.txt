@@ -1,0 +1,132 @@
+*************************************************** HTML ***************************************************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mack's Library</title>
+    <script src="./js/library.js" defer></script>
+    <link rel="stylesheet" href="./css/library.css">
+</head>
+<body>
+
+    <button id="showAddBookDialog">Add Book</button>
+    
+<dialog id="addBookDialog">
+    <form id="form">
+        <div>
+            <label for="bookAuthor">Author</label>
+        <input type="text" id="bookAuthor">
+    </div>
+    <div>
+        <label for="bookTitle">Title</label>
+        <input type="text" id="bookTitle">
+    </div>
+    <div>
+        <label for="bookPages">Number of Pages</label>
+        <input type="text" id="bookPages">
+    </div>
+    <div>
+        <label for="bookRead">Finished Reading</label>
+        <input type="text" id="bookRead">
+    </div>
+
+        <div>
+        <button value="cancel" formmethod="dialog">Cancel</button>
+        <button id="addBookButton" type="button" onclick="addBookToLibrary()">Add Book to Library</button>
+    </div>
+      </form>
+</dialog>
+
+    <div class="bookContainer" id="bookContainer"></div>
+    
+</body>
+</html>
+
+
+*************************************************** JS ***************************************************
+
+const myLibrary = [];
+
+const addBookButton = document.getElementById("showAddBookDialog");
+const addBookDialog = document.getElementById("addBookDialog");
+
+
+// "Show the dialog" button opens the <dialog> modally
+addBookButton.addEventListener("click", () => {
+    addBookDialog.showModal();
+  });
+
+
+
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.info = function() {
+        return (`${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`);
+    }
+}
+
+
+function showBooks() {
+    let bookTable = "<table border='1|1'>";
+    for (let i = 0; i < myLibrary.length; i++) {
+        bookTable += "<tr>";
+        bookTable += "<td>" + myLibrary[i].title + "</td>";
+        bookTable += "<td>" + myLibrary[i].author + "</td>";
+        bookTable += "<td>" + myLibrary[i].pages + "</td>";
+        bookTable += "<td>" + myLibrary[i].read + "</td>";
+        bookTable += "</tr>";
+    }
+    bookTable += "</table>";
+    
+    document.getElementById("bookContainer").innerHTML = bookTable;
+    }
+
+
+
+function addBookToLibrary() {
+// Initialize an empty array
+//const inputArray = [];
+  
+// Get the input elements
+const inputAuthor = document.getElementById("bookAuthor");
+const inputTitle = document.getElementById("bookTitle");
+const inputPages = document.getElementById("bookPages");
+const inputRead = document.getElementById("bookRead");
+
+// Get the values of the input elements
+const valueAuthor = inputAuthor.value;
+const valueTitle = inputTitle.value;
+const valuePages = inputPages.value;
+const valueRead = inputRead.value;
+
+// Add the values to the array
+myLibrary.push(valueAuthor, valueTitle, valuePages, valueRead);
+
+// Print the array to the console
+//console.log(myLibrary);
+showBooks();
+}
+
+/* function showBooks() {
+    for (const book of myLibrary) {
+        console.log(book);
+    }
+} */
+
+/* function showBooks() {
+    for (let i = 0; i < myLibrary.length; i++) {
+        console.log(myLibrary[i]);
+    }
+} */
+
+
+
+
+//showBooks();
+
+
