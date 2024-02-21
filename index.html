@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mack's Library</title>
     <script src="./js/library.js" defer></script>
-    <link rel="stylesheet" href="./css/library.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/library.css" />
+  </head>
+  <body>
+    <button id="showAddBookDialog">Add Book</button>
 
-    
-    
-</body>
+    <dialog id="addBookDialog">
+        <h1>Add Book to Library</h1>
+      <form id="bookForm">
+        <div>
+          <label for="bookAuthor">Author</label>
+          <input type="text" id="bookAuthor" />
+        </div>
+        <div>
+          <label for="bookTitle">Title</label>
+          <input type="text" id="bookTitle" />
+        </div>
+        <div>
+          <label for="bookPages">Number of Pages</label>
+          <input type="text" id="bookPages" />
+        </div>
+        <div>
+          <label for="bookRead">Finished Reading</label>
+          <input type="text" id="bookRead" />
+        </div>
+
+        <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="addBookButton" type="button" onclick="addBookToLibrary()">
+            Add Book to Library
+          </button>
+        </div>
+      </form>
+    </dialog>
+  </body>
 </html>
