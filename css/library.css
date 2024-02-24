@@ -1,0 +1,12 @@
+#bookContainer {
+    display: flex;
+}
+
+.catalogCard {
+    border: 1px solid gainsboro;
+    padding: 14px;
+}
+
+.bookButtons {
+    margin-top: 7px;
+}

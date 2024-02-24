@@ -8,39 +8,39 @@
     <link rel="stylesheet" href="./css/library.css" />
   </head>
   <body>
-    <button id="showAddBookDialog">Add Book</button>
+    <main>
+      <button id="showAddBookDialog">Add Book</button>
 
-    <div id="bookContainer" class="bookContainer"></div>
+      <div id="bookContainer" class="bookContainer"></div>
 
-    <dialog id="addBookDialog">
-      <h1>Add Book to Library</h1>
-      <form id="bookForm">
-        <div>
-          <label for="bookAuthor">Author</label>
-          <input type="text" id="bookAuthor" />
-        </div>
-        <div>
-          <label for="bookTitle">Title</label>
-          <input type="text" id="bookTitle" />
-        </div>
-        <div>
-          <label for="bookPages">Number of Pages</label>
-          <input type="text" id="bookPages" />
-        </div>
-        <div>
-          <label for="bookRead">Finished Reading</label>
-          <input type="text" id="bookRead" />
-        </div>
+      <dialog id="addBookDialog">
+        <h1>Add Book to Library</h1>
+        <form id="bookForm">
+          <div>
+            <label for="bookTitle">Title</label>
+            <input type="text" id="bookTitle" />
+          </div>
+          <div>
+            <label for="bookAuthor">Author</label>
+            <input type="text" id="bookAuthor" />
+          </div>
+          <div>
+            <label for="bookPages">Number of Pages</label>
+            <input type="text" id="bookPages" />
+          </div>
+          <div>
+            <label for="bookRead">Finished Reading</label>
+            <input type="checkbox" id="bookRead" />
+          </div>
 
-        <div>
-          <button value="cancel" formmethod="dialog">Cancel</button>
-          <button id="createBookButton" type="button">
-            Add Book to Library
-          </button>
-        </div>
-      </form>
-    </dialog>
-
-
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="createBookButton" type="button">
+              Add Book to Library
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </main>
   </body>
 </html>
