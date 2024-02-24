@@ -56,8 +56,11 @@ function showBooks() {
     <div>${myLibrary[i].author}</div>
     <div>Pages: ${myLibrary[i].pages}</div>
     <div class="bookButtons">
-    <button class="${myLibrary[i].read ? "isRead" : "notRead"}" onclick="toggleRead(${i}">
-    ${myLibrary[i].read ? "Read" : "Not Read"}</button>
+    <button class="${
+      myLibrary[i].read ? "isRead" : "notRead"
+    }" onclick="toggleRead(${i})">${
+      myLibrary[i].read ? "Read" : "Not Read"
+    }</button>
     <button class="btnDelete" onclick="deleteBook(${i})">Delete</button>
     </div>
     `;
